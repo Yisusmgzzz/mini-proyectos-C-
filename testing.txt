@@ -1,1 +1,2 @@
 Hola mundo!!
+este es un pequeño mensaje para aquellas personas que esten confundidas o no sepan usar git, este es mi primer paso hacia el mundo de git y voy a seguir aprendiendo continuamente para mejorar en este mundo de la programacion y ser mejor cada dia.. espero lo mismo para ustedes :D
