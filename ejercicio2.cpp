@@ -1,5 +1,5 @@
 /* segundo ejercicio y seguia inventando cosas pq me quedaba sin ideas
- * creo que voy a tener que buscar ejercicios reales xd */
+ * JAJA*/
 #include <iostream>
 using namespace std;
 
