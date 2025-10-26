@@ -1,4 +1,4 @@
-/*aca estaba practicando funciones con variables de retorno
+/*aca estaba practicando funciones con variables de entorno
  * con la intencion de mejorar mi logica usando funciones */
 
 #include <iostream>
