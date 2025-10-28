@@ -6,18 +6,21 @@
 
 #include <iostream>
 
-
-int main() {
-    int edad, sel;
+void menu(int &selection) {
 
     std::cout << "==== MENU ====" << std::endl; //aqui quise hacer un menu para que mi aplicacion no se vea tan aburrida y seca jeje
     std::cout << "¡¡que opcion quieres escoger!!" << std::endl;
     std::cout << "1. saber de que grupo es tu hijo/a" << std::endl;
     std::cout << "2. donar a la comunidad" << std::endl;
     std::cout << "3. ninguna de las anteriores" << std::endl;
-    std::cin >> sel;
+    std::cin >> selection;
+}
 
+int main() {
+    int edad, sel;
 
+    menu(sel); //llamo a la funcion menu para ahorrar lineas de codigo
+    
     //aca aplique switch que cumple la misma funcion del if, pero para mas condiciones y hace que el codigo se vea mas uniforme.
     switch (sel) {    
         case 1:
@@ -26,7 +29,9 @@ int main() {
 
             if (edad <=6) { std::cout << "eres de la primera infancia" << std::endl; }
             if (edad <=12) {std::cout << "pertenece al grupo de la segunda infancia" << std::endl;}
-            if (edad <=18) {std::cout << "pertenece al grupo de los adolescentes" << std::endl;}
+            if (edad <=18) {std::cout << "pertenece al grupo de los adolescentes" << std::endl;} else {
+                std::cout << "pertenece al grupo de los adultos" << std::endl;
+            }
 
             break;
 
