@@ -1,53 +1,29 @@
-/* esta es mi primera practica de algoritmos en C++ de nuv a pro, primeros pasos 
- * poco a poco mejorando */
+/* aqui quise darle uniformidad a mi codigo añadiendo
+ * cosas como menus o vainas asi */
 #include <iostream>
-using namespace std;
+#include <limits>
 
 int main() {
-	cout << "Hola mi nombre es Jesus :)" << endl;
-	cout << "Hello World"; 
+	char sel;
 
-	int num1, num2, sum;
+	std::cout << "=== BIENVENIDO ===" << std::endl;
+	std::cout << "¿quieres saber el valor maximo de los numeros enteros y decimales?" << std::endl;
+	std::cout << "S/N: ";
+	std::cin >> sel;
 
-	
-	
-	cout << "cual es el primer numero: ";
-	cin >> num1;
+	if (sel == 'S' || sel == 's') {
+		
+		std::cout << "maximo valor de enteros: " << std::numeric_limits<int>::max() << std::endl; //esa funcion segun te muestra el valor maximo o minimo del tipo de dato numerico que quieras
+		std::cout << "maximo valor de decimales: " << std::numeric_limits<float>::max() << std::endl; //aqui puse de valor decimales pq aja despues se repetia jaja
 
-	cout << "cual es el otro numero: ";
-	cin >> num2;
+		return 1;
+	}else; if (sel == 'N' || sel == 'n') {
 
-	sum = num1 + num2;
-
-	cout << "la suma es: " << sum << endl;
-
-
+		std::cout << "oh, ok, no pasa nada ";
+		return 1;
+	}else{
+		std::cout << "eso no me servira aqui... solo puedes escoger 2 opciones";
+	}
 
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

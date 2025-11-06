@@ -1,42 +1,42 @@
-/*aca estaba practicando funciones con variables de entorno
- * con la intencion de mejorar mi logica usando funciones */
+/*Realice una aplicación en C++ que le pregunte al usuario la edad de su hijo.
+ * Si el niño tiene entre 0 y 6 años el programa debe imprimir que el niño pertenece al grupo de la primera infancia.
+ * Si la edad está entre los 6 y los 12 años el programa debe imprimir que el niño pertenece al grupo de la segunda infancia;
+ * y en caso de que el niño tenga entre 12 y 18 años el mensaje impreso dirá que pertenece al grupo de los adolescentes.
+ * Siga las instrucciones de la guía de aprendizaje 3*/
 
 #include <iostream>
-#include <math.h>
+using namespace std;
 
-//esta funcion tiene como objetivo intercambiar numeros (simplemente eso xd)
-void intercambio(int &numero1, int &numero2) {
-    int temp = numero1;
-    numero1 = numero2;
-    numero2 = temp;
+void menu(int &selection) {
+
+    cout<<"==== MENU ===="<<endl; //aqui quise hacer un menu para que mi aplicacion no se vea tan aburrida y seca jeje
+    cout<<"¡¡que opcion quieres escoger!!"<<endl;
+    cout<<"1. saber de que grupo es tu hijo/a"<<endl;
+    cout<<"2. donar a la comunidad"<<endl;
+    cout<<"3. ninguna de las anteriores"<<std::endl;cin>>selection;
 }
 
-//esta otra funcion es para que el usuario decida si quiere multiplicar el numero o no despues de ingresarlo
-void multiplicacion(int &numero) {
-    std::string question = "quieres multiplicar el numero? S/n ";
-    char sel;
-    std::cout <<  question << std::endl;
-    std::cin >> sel;
-    if (sel == 'N' || sel == 'n') {
-        std::cout << "Ptm.. ok." << std::endl;
-    } else {
-        numero = numero*2;
-        std::cout << "resultado: " << numero << std::endl;
-    
-    }
-}
-
-//aca se ahorran muchas lineas de codigo solo por la funcion anterior
 int main() {
-    int n1, n2;
-    std::cout << "ingresa un numero: " << std::endl;
-    std::cin >> n1;
-    multiplicacion(n1);
-    std::cout << "ingresa un numero: " << std::endl;
-    std::cin >> n2;
-    multiplicacion(n2);
-    //hice que preguntara el numero para hacerlo mas dinamico pero simplemente pude haber puesto un numero fijo y funciona de la misma manera
-    intercambio(n1, n2);
-    std::cout << "primer numero = " << n1 << " segundo numero = " << n2 << std::endl;
+    int edad, sel;
+
+    menu(sel); //llamo a la funcion menu para ahorrar lineas de codigo
+    
+    //aca aplique switch que cumple la misma funcion del if, pero para mas condiciones y hace que el codigo se vea mas uniforme.
+    switch (sel) {    
+        case 1:
+            cout<<"¿cual es la edad de tu hijo/a?: ";cin>>edad;
+
+            if (edad <=6){cout<<"eres de la primera infancia"<<endl; }
+            if (edad <=12){cout<<"pertenece al grupo de la segunda infancia"<<endl;}
+            if (edad <=18){cout<<"pertenece al grupo de los adolescentes"<<endl;} else {
+                cout<<"pertenece al grupo de los adultos"<<endl; }
+            break;
+        case 2:
+            cout<<"MUCHAS GRACIAS POR DONAR!! se aprecia la intencion <3"<<endl; //una pequeña opcion para "monetizar" mi aplicacion 
+            break;
+        case 3:
+            cout<<"Adios!! :D"<<endl; //y la despedida 
+            break;
+    }
     return 0;
 }

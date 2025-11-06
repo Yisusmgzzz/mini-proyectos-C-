@@ -1,29 +1,46 @@
-/* aqui quise darle uniformidad a mi codigo añadiendo
- * cosas como menus o vainas asi */
+/*aca estaba practicando funciones con variables de entorno
+ * con la intencion de mejorar mi logica usando funciones */
+#include <string>
 #include <iostream>
-#include <limits>
+#include <math.h>
+#include <string>
+//funcion que hace que se multipliquen 2 numeros
+int multiplicar(int &n1, int &n2) {
+    //devuelve el producto
+    return n1 * n2;
+}
 
+//esta funcion tiene como objetivo intercambiar numeros (simplemente eso xd)
+void intercambio(int &numero1, int &numero2) {
+    int temp = numero1;
+    int i = 0;
+    numero1 = numero2;
+    numero2 = temp;
+}
+
+int suma(int &n1, int &n2) {
+    //devuelve la adicion 
+    return n1 + n2;
+}
+
+std::string saludo(std::string nombre) {
+    return "Hola!! mi nombre es " + nombre + " como estas :D";
+}
+
+//aca se ahorran muchas lineas de codigo solo por la funcion anterior
 int main() {
-	char sel;
+    int n1, n2;
+    int i = 0;
 
-	std::cout << "=== BIENVENIDO ===" << std::endl;
-	std::cout << "¿quieres saber el valor maximo de los numeros enteros y decimales?" << std::endl;
-	std::cout << "S/N: ";
-	std::cin >> sel;
-
-	if (sel == 'S' || sel == 's') {
-		
-		std::cout << "maximo valor de enteros: " << std::numeric_limits<int>::max() << std::endl; //esa funcion segun te muestra el valor maximo o minimo del tipo de dato numerico que quieras
-		std::cout << "maximo valor de decimales: " << std::numeric_limits<float>::max() << std::endl; //aqui puse de valor decimales pq aja despues se repetia jaja
-
-		return 1;
-	}else; if (sel == 'N' || sel == 'n') {
-
-		std::cout << "oh, ok, no pasa nada ";
-		return 1;
-	}else{
-		std::cout << "eso no me servira aqui... solo puedes escoger 2 opciones";
-	}
-
-	return 0;
+    std::cout << "ingresa un numero: " << std::endl;
+    std::cin >> n1;
+    std::cout << "ingresa un numero: " << std::endl;
+    std::cin >> n2;
+    std::cout << "la operacion dio: " << multiplicar(n1, n2) << "\n";
+    std::cout << "la suma dio: " << suma(n1, n2) << "\n";
+    //hice que preguntara el numero para hacerlo mas dinamico pero simplemente pude haber puesto un numero fijo y funciona de la misma manera
+    intercambio(n1, n2);
+    std::cout << "primer numero = " << n1 << " segundo numero = " << n2 << std::endl;
+    saludo("Jesus");
+    return 0;
 }
