@@ -2,6 +2,8 @@
   y calcule la nota final media de los 4 alumnos.
 */
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 int main()
@@ -16,6 +18,7 @@ int main()
     }
     cout.precision(2);
     notaFinalMedia = suma/4; //se saca el promedio o la media de las notas de cada estudiante
-    cout<<"la nota final media de los 4 alumnos es: "<<notaFinalMedia;
+    cout<<"la nota final media de los 4 alumnos es: "<<notaFinalMedia<<endl;
+
     return 0;
 }
